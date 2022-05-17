@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='playerformcss.css')}}" />
+<form action="/playerform" method="POST">
+<div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+          <div class="screen-header-button close"></div>
+          <div class="screen-header-button maximize"></div>
+          <div class="screen-header-button minimize"></div>
+        </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>Player</span>
+            <span>submit to leaderboard form</span>
+          </div>
+        </div>
+        <div class="screen-body-item">
+          <div class="app-form">
+            <div class="app-form-group">
+              <input type="text" id="username" name="username" class="app-form-control" placeholder="username" required >
+            </div>
+            <div class="app-form-group">
+              <input type="text" id="tag" name="tag" class="app-form-control" placeholder="tag without '#'" required >
+            </div>
+            <div class="app-form-group buttons">
+              <button id="submit" name="submit" class="app-form-button">SEND</button>
+              <script>
+                $('button.submit').click(function(){
+                var btn = $(this);
+                btn.prop('disabled', true);
+                setTimeout(function(){
+                  btn.prop('disabled', false);
+                },15000);
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

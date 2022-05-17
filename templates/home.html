@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styleshome.css')}}" />
+
+<body style="background-color:#242424;">
+<center>
+
+	<img src="{{url_for('static', filename='image4.png')}}" align="middle" width="800" height="60"/>
+	
+
+	<h2 style="color: white;">It normally takes 5-10 seconds for the leaderboard to load in</h2>
+
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<a href="/leaderboard/">
+			<button id="button" type="submit" class="btn btn--light">
+				<span class="btn__inner">
+				<span class="btn__slide"></span>
+				<span class="btn__content">LeaderBoard</span>
+			</button>
+	</a>
+	<br />
+	<img id="picture" src="{{url_for('static', filename='loading.gif')}}" align="middle" width="80" height="80"/>
+	</br>
+	</br>	
+
+	<script>
+		$('#picture').hide(); // hide at beginning
+
+		$('#button').click(function(){
+		$('#picture').show(); // show on button click
+		});
+	</script>
+		
+	<a href="/playerform">
+			<button id="button2" type="submit" class="btn btn--light">
+				<span class="btn__inner">
+				<span class="btn__slide"></span>
+				<span class="btn__content">Submit Player Username</span>
+			</button>
+</center>

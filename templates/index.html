@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}" />
+</br>
+</br>
+<center>
+	<img src="{{url_for('static', filename='image1.png')}}" align="middle" width="652" height="97"/>
+	</br>
+	<img src="{{url_for('static', filename='image2.png')}}" align="middle" width="500" height="54"/>
+</center>
+</br>
+</br>
+
+<body style="background-color:#292929;">
+<ul>
+		<div style="background: #FA4454;
+									text-align: center;
+			            font-size: 20px; 
+									font-weight: bold;
+									color: white;
+			            padding: 10px; 
+			            border: 1px solid black; 
+			            margin: -1px;">
+								
+			  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Username &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Level &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Rank &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last Match Played &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Comp matches won this season
+		</div>
+	{% autoescape false %}
+    {% for el in list1 %}
+				<div style="background: #FF717E; 
+									text-align: center;
+			            font-size: 20px; 
+									color: white;
+			            padding: 10px; 
+			            border: 1px solid white; 
+			            margin: -1px;"
+					>
+					
+			  {{el}}
+				</div>
+    {% endfor %}
+	{% endautoescape %}
+</ul>
+
+
+<script> 
+		function timedRefresh(timeoutPeriod) {
+			setTimeout("location.reload(true);",timeoutPeriod);
+		}    
+		window.onload = timedRefresh(300000);
+</script>
+
+
+<p style="color: white;"> The page will refresh in <span id="countdowntimer" style="color: white;">60 </span> Seconds</p>
+
+<script type="text/javascript">
+    var timeleft = 60;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+</script> 
+

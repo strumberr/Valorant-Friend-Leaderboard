@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles500.css')}}" />
+
+
+<div class="container">
+<div class="wall">
+
+</div>
+<div class="errortext">
+    <h1>Redirecting you to the Leaderboard...</h1>
+	</br>
+	</br>
+    <h2>If the leaderboard doesn't load, try refreshing the website. Or wait 2 seconds for the website to restart by itself</h2>
+</div>
+							
+<script> 
+		function timedRefresh(timeoutPeriod) {
+			setTimeout("location.reload(true);",timeoutPeriod);
+		}    
+		window.onload = timedRefresh(600);
+</script>
